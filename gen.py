@@ -1,6 +1,6 @@
 import random, collections 
 
-MAX = 10**1
+MAX = 10**2
 
 def generate(n):
 	tc = []
@@ -15,6 +15,7 @@ def solve(tc):
 	ds = collections.defaultdict(int)
 	
 	for test in tc:
+
 		if len(test) == 1:
 			ds[test[0]] += 1
 		else:
@@ -23,7 +24,7 @@ def solve(tc):
 	return ans
 
 
-testcases = generate(10)
+testcases = generate(100)
 print("testcases", testcases)
 print("ans ", solve(testcases))
 
