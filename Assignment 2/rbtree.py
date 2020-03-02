@@ -19,7 +19,9 @@ class Node:
 
 class RedBlackTree():
 
-    global NIL
+    global NIL, DEBUG
+
+    DEBUG = False
     NIL = Node(val=-1, color=BLACK, size=0)
 
 
@@ -74,7 +76,9 @@ class RedBlackTree():
 
     def fixup(self, curr):
         while curr.parent.color == RED:
-            print(curr.val, "inside fix")
+
+            if DEBUG : print(curr.val, "inside fix")
+            
             if curr.parent == curr.parent.parent.left:
                 y = curr.parent.parent.right    # uncle of curr
                 if y.color == RED:
@@ -124,17 +128,17 @@ class RedBlackTree():
 
         # self.root.parent = NIL
         y = NIL
-        new_node = Node(val=x, left=NIL, right=NIL)
         curr = self.root
         while curr != NIL:
             y = curr
+            if curr.val == x:
+                return
             curr = curr.left if x < curr.val else curr.right
 
+        new_node = Node(val=x, left=NIL, right=NIL)
         new_node.parent = y
         if y == NIL:
             self.root = new_node
-        elif new_node.val == y.val:
-            return
         elif new_node.val < y.val:
             y.left = new_node
         else:
@@ -145,11 +149,12 @@ class RedBlackTree():
             RedBlackTree.update_size(curr)
             curr = curr.parent
 
-        self.fixup(new_node)
-        print(new_node.val)
-        self.print_tree()
-        print("Height ", self.get_height())
-        self.check_tree()
+        self.fixup(new_node)    
+        if DEBUG:            
+            print(new_node.val)
+            self.print_tree()
+            print("Height ", self.get_height())
+            self.check_tree()
 
     # Need to update b_height, cnt and all other fields !
 
@@ -201,12 +206,25 @@ class RedBlackTree():
 
 
 
-rbtree = RedBlackTree()
-for i in range(20):
-    rbtree.insert(i)
+# rbtree = RedBlackTree()
+# for i in range(20):
+#     rbtree.insert(i)
 
-rbtree.print_tree()
-l = 10
-r = 15
+# rbtree.print_tree()
+# l = 10
+# r = 15
 
-print("count in range %d to %d" % (l, r), rbtree.get_count_in_range(l, r))
+# print("count in range %d to %d" % (l, r), rbtree.get_count_in_range(l, r))
+
+def solve():
+
+    rbtree = RedBlackTree()
+    q = int(input())
+    for _ in range(q):
+        line = input().split()
+        if line[0] == '+':
+            rbtree.insert(int(line[1]))
+        else:
+            l, r = map(int, line[1:])
+            print(rbtree.get_count_in_range(l, r))
+
