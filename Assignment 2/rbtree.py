@@ -114,6 +114,7 @@ class RedBlackTree():
 
     def b_height(curr):
         h = 0
+        curr = curr.left
         while curr != NIL:
             h += 1 if curr.color == BLACK else 0
             curr = curr.left # leftist ! 
