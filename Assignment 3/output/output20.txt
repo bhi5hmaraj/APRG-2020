@@ -1,0 +1,12 @@
+F G C V E J T Q
+F G C V E T J Q
+F G C V J E T Q
+F G V C E J T Q
+F G V C E T J Q
+F G V C J E T Q
+F G V J C E T Q
+F V G C E J T Q
+F V G C E T J Q
+F V G C J E T Q
+F V G J C E T Q
+F V J G C E T Q

@@ -1,0 +1,10 @@
+B H D J U E V
+B H D J U V E
+B H D J V U E
+B H D V J U E
+B H V D J U E
+H B D J U E V
+H B D J U V E
+H B D J V U E
+H B D V J U E
+H B V D J U E

@@ -1,0 +1,6 @@
+F H P B V K C W Q L E
+F P H B V K C W Q L E
+H F P B V K C W Q L E
+H P F B V K C W Q L E
+P F H B V K C W Q L E
+P H F B V K C W Q L E
