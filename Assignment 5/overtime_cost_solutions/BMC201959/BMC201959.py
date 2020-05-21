@@ -1,0 +1,6 @@
+n, d, r = map(int, input().split())
+a = sorted(map(int, input().split()))
+b = reversed(sorted(map(int, input().split())))
+c = zip(a, b)
+answer = (sum([max(x+y-d, 0) for x, y in c])* r) 
+print(answer)
